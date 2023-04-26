@@ -1,0 +1,28 @@
+{
+    "manifest_version": 3,
+    "name": "Shop",
+    "version": "1.0",
+    "description": "Compare prices",
+    "permissions": [
+        "activeTab",
+        "http://127.0.0.1:5000/api/scrape/site",
+        "scripting"
+    ],
+    "icons": {}, 
+    "content_scripts": [
+        {
+            "matches": [
+                "<all_urls>"
+            ],
+            "js": [
+                "content.js"
+            ]
+        }
+    ],
+    "action": {
+        "default_popup": "popup.html"
+    },
+    "background": {
+        "service_worker": "background.js"
+    }
+}
